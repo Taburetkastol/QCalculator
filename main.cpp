@@ -2,6 +2,8 @@
 #include <QGraphicsBlurEffect>
 #include <QApplication>
 
+//ТОП 10 БЕСПОЛЕЗНЫХ ПРИЛОЖЕНИЙ @Гриша
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

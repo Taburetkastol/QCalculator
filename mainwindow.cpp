@@ -108,7 +108,10 @@ void MainWindow::Operations()
     }
     else if(button->text() == "←")
     {
-        ui->label_2->setText(ui->label_2->text().remove(ui->label_2->text().size() - 1, 1));
+        if(ui->label_2->text() != "0")
+        {
+            ui->label_2->setText(ui->label_2->text().remove(ui->label_2->text().size() - 1, 1));
+        }
     }
     else if(button->text() == "%")
     {
@@ -117,27 +120,135 @@ void MainWindow::Operations()
     }
     else if(button->text() == "+")
     {
-        first_num = result;
-        ui->label->setText(value.setNum(result) + " + ");
-        ui->label_2->setText("0");
+        if(ui->label->text() == "")
+        {
+            first_num = result;
+            ui->label->setText(value.setNum(result) + " + ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("+"))
+        {
+            first_num = result + first_num;
+            ui->label->setText(value.setNum(first_num) + " + ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("÷"))
+        {
+            first_num = first_num/result;
+            ui->label->setText(value.setNum(first_num) + " + ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("×"))
+        {
+            first_num = first_num * result;
+            ui->label->setText(value.setNum(first_num) + " + ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("-"))
+        {
+            first_num = first_num - result;
+            ui->label->setText(value.setNum(first_num) + " + ");
+            ui->label_2->setText("0");
+        }
     }
     else if(button->text() == "-")
     {
-        first_num = result;
-        ui->label->setText(value.setNum(result) + " - ");
-        ui->label_2->setText("0");
+        if(ui->label->text() == "")
+        {
+            first_num = result;
+            ui->label->setText(value.setNum(result) + " - ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("+"))
+        {
+            first_num = result + first_num;
+            ui->label->setText(value.setNum(first_num) + " - ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("÷"))
+        {
+            first_num = first_num/result;
+            ui->label->setText(value.setNum(first_num) + " - ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("×"))
+        {
+            first_num = first_num * result;
+            ui->label->setText(value.setNum(first_num) + " - ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("-"))
+        {
+            first_num = first_num - result;
+            ui->label->setText(value.setNum(first_num) + " - ");
+            ui->label_2->setText("0");
+        }
     }
     else if(button->text() == "÷")
     {
-        first_num = result;
-        ui->label->setText(value.setNum(result) + " ÷ ");
-        ui->label_2->setText("0");
+        if(ui->label->text() == "")
+        {
+            first_num = result;
+            ui->label->setText(value.setNum(result) + " ÷ ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("+"))
+        {
+            first_num = result + first_num;
+            ui->label->setText(value.setNum(first_num) + " ÷ ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("÷"))
+        {
+            first_num = first_num/result;
+            ui->label->setText(value.setNum(first_num) + " ÷ ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("×"))
+        {
+            first_num = first_num * result;
+            ui->label->setText(value.setNum(first_num) + " ÷ ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("-"))
+        {
+            first_num = first_num - result;
+            ui->label->setText(value.setNum(first_num) + " ÷ ");
+            ui->label_2->setText("0");
+        }
     }
     else if(button->text() == "×")
     {
-        first_num = result;
-        ui->label->setText(value.setNum(result) + " × ");
-        ui->label_2->setText("0");
+        if(ui->label->text() == "")
+        {
+            first_num = result;
+            ui->label->setText(value.setNum(result) + " × ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("+"))
+        {
+            first_num = result + first_num;
+            ui->label->setText(value.setNum(first_num) + " × ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("÷"))
+        {
+            first_num = first_num/result;
+            ui->label->setText(value.setNum(first_num) + " × ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("×"))
+        {
+            first_num = first_num * result;
+            ui->label->setText(value.setNum(first_num) + " × ");
+            ui->label_2->setText("0");
+        }
+        else if(ui->label->text().contains("-"))
+        {
+            first_num = first_num - result;
+            ui->label->setText(value.setNum(first_num) + " × ");
+            ui->label_2->setText("0");
+        }
     }
     else if(button->text() == "=")
     {
